@@ -1,4 +1,3 @@
-// ================= DATA =================
 const jobs = [
   {id:1, companyName:'Mobile First Corp', position:'React Native Developer', location:'Remote', type:'Full-time', salary:'$130,000 - $175,000', description:'Build cross-platform mobile applications using React Native.work on products used by millions of users worldwide.', status:'all'},
   {id:2, companyName:'WebFlow Agency', position:'Web Designer & Developer', location:'Los Angeles, CA', type:'Part-time', salary:'$80,000 - $120,000', description:'Create stunning web experiences for high-profile clients.Must have portfolio and experience with modern web design trends.', status:'all'},
@@ -12,7 +11,6 @@ const jobs = [
 
 let currentTab = 'all';
 
-// ================= RENDER =================
 function renderJobs() {
   const container = document.getElementById('jobsContainer');
   container.innerHTML = '';
@@ -72,14 +70,14 @@ function renderJobs() {
   updateDashboard();
 }
 
-// ================= DASHBOARD =================
+
 function updateDashboard() {
   document.getElementById('totalCount').textContent = jobs.length;
   document.getElementById('interviewCount').textContent = jobs.filter(j=>j.status==='interview').length;
   document.getElementById('rejectedCount').textContent = jobs.filter(j=>j.status==='rejected').length;
 }
 
-// ================= TABS =================
+
 document.querySelectorAll('.tab-btn').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
@@ -89,7 +87,6 @@ document.querySelectorAll('.tab-btn').forEach(tab => {
   });
 });
 
-// ================= ACTIONS (EVENT DELEGATION) =================
 document.getElementById('jobsContainer').addEventListener('click', e => {
   const id = Number(e.target.dataset.id);
   const job = jobs.find(j => j.id === id);
