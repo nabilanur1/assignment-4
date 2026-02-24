@@ -1,2 +1,19 @@
 body { font-family: 'Geist', sans-serif; }
- 
+  .tab-btn{
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 500;
+    font-size: 14px;
+    transition: .2s;
+  }
+
+  .tab-btn.active{
+    background: #3b82f6;
+    color: white;
+  }
+
+  .tab-btn:hover{
+    background: #e2e8f0;
+  }
